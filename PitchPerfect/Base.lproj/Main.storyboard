@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -73,9 +74,164 @@
                     <view key="view" contentMode="scaleToFill" id="PWb-cp-e8I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.41481769909999999" green="0.1093228998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FJ1-8g-p8X">
+                                <rect key="frame" x="16" y="64" width="343" height="514.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hU1-aX-CF6">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="171.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VqP-lM-kPz" userLabel="Slow Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="171.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="171.5" id="98H-9I-kvo"/>
+                                                    <constraint firstAttribute="width" secondItem="VqP-lM-kPz" secondAttribute="height" multiplier="1:1" id="CUV-j8-Q23"/>
+                                                    <constraint firstAttribute="width" constant="171.5" id="b6f-dw-Ocw"/>
+                                                </constraints>
+                                                <state key="normal" image="Slow"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="playSoundForButton:" destination="tDU-a8-E3J" eventType="touchUpInside" id="yg7-lr-JkW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkx-oA-0iN" userLabel="Fast Button">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="171.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="171.5" id="Fnl-Vz-ZCO"/>
+                                                    <constraint firstAttribute="width" secondItem="rkx-oA-0iN" secondAttribute="height" multiplier="1:1" id="RDa-o9-lBh"/>
+                                                    <constraint firstAttribute="width" constant="171.5" id="gFj-3L-joj"/>
+                                                </constraints>
+                                                <state key="normal" image="Fast"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="playSoundForButton:" destination="tDU-a8-E3J" eventType="touchUpInside" id="ekk-Xu-AWp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Mzf-SS-bbM">
+                                        <rect key="frame" x="0.0" y="171.5" width="343" height="171.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAI-Wz-9hX" userLabel="High Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="171.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="171.5" id="4Rc-KH-f2Z"/>
+                                                    <constraint firstAttribute="width" secondItem="WAI-Wz-9hX" secondAttribute="height" multiplier="1:1" id="RzP-6y-ink"/>
+                                                    <constraint firstAttribute="width" constant="171.5" id="u9U-SP-cnh"/>
+                                                </constraints>
+                                                <state key="normal" image="HighPitch"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="playSoundForButton:" destination="tDU-a8-E3J" eventType="touchUpInside" id="f7V-ir-uaq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOg-ot-XjK" userLabel="Low Button">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="171.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="171.5" id="2To-gq-Vo5"/>
+                                                    <constraint firstAttribute="width" constant="171.5" id="BzV-Lu-TlS"/>
+                                                    <constraint firstAttribute="width" secondItem="mOg-ot-XjK" secondAttribute="height" multiplier="1:1" id="fcf-eY-EuC"/>
+                                                </constraints>
+                                                <state key="normal" image="LowPitch"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="playSoundForButton:" destination="tDU-a8-E3J" eventType="touchUpInside" id="e7T-LK-Gku"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ptr-1w-b5I">
+                                        <rect key="frame" x="0.0" y="343" width="343" height="171.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pjp-8Q-l1g" userLabel="Echo Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="171.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Pjp-8Q-l1g" secondAttribute="height" multiplier="1:1" id="4da-Bk-iKK"/>
+                                                    <constraint firstAttribute="width" constant="171.5" id="Ueb-ZX-q8x"/>
+                                                    <constraint firstAttribute="height" constant="171.5" id="WaE-gl-S1b"/>
+                                                </constraints>
+                                                <state key="normal" image="Echo"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="playSoundForButton:" destination="tDU-a8-E3J" eventType="touchUpInside" id="39E-rO-rFh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpu-Ep-wEb" userLabel="Reverb Button">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="171.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="171.5" id="KBY-wk-rmU"/>
+                                                    <constraint firstAttribute="height" constant="171.5" id="Y5g-rK-NoH"/>
+                                                    <constraint firstAttribute="width" secondItem="Vpu-Ep-wEb" secondAttribute="height" multiplier="1:1" id="smV-wB-c3a"/>
+                                                </constraints>
+                                                <state key="normal" image="Reverb"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="playSoundForButton:" destination="tDU-a8-E3J" eventType="touchUpInside" id="mSo-4G-76N"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFS-kt-xH7" userLabel="Stop Button">
+                                <rect key="frame" x="155.5" y="586.5" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="4Y4-hJ-0aS"/>
+                                    <constraint firstAttribute="width" secondItem="rFS-kt-xH7" secondAttribute="height" multiplier="1:1" id="BZ2-YA-YuE"/>
+                                    <constraint firstAttribute="height" constant="64" id="Erb-cd-lJ0"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="a0N-6k-QWy"/>
+                                    <constraint firstAttribute="width" constant="64" id="l2L-PX-Vbz"/>
+                                </constraints>
+                                <state key="normal" image="Stop"/>
+                                <connections>
+                                    <action selector="stopButtonPressed:" destination="tDU-a8-E3J" eventType="touchUpInside" id="iNx-LG-qkJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rFS-kt-xH7" firstAttribute="centerX" secondItem="Uhm-yf-cRf" secondAttribute="centerX" id="EFB-1Q-FUB"/>
+                            <constraint firstItem="rFS-kt-xH7" firstAttribute="top" secondItem="FJ1-8g-p8X" secondAttribute="bottom" constant="8" id="R4O-cQ-kd0"/>
+                            <constraint firstItem="Uhm-yf-cRf" firstAttribute="bottom" secondItem="rFS-kt-xH7" secondAttribute="bottom" constant="16" id="Si3-j5-cTM"/>
+                            <constraint firstItem="Uhm-yf-cRf" firstAttribute="trailing" secondItem="FJ1-8g-p8X" secondAttribute="trailing" constant="16" id="V29-bp-p9N"/>
+                            <constraint firstItem="FJ1-8g-p8X" firstAttribute="leading" secondItem="Uhm-yf-cRf" secondAttribute="leading" constant="16" id="le9-Rm-p3A"/>
+                            <constraint firstItem="FJ1-8g-p8X" firstAttribute="top" secondItem="Uhm-yf-cRf" secondAttribute="top" id="zL5-cy-17t"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Uhm-yf-cRf"/>
                     </view>
+                    <connections>
+                        <outlet property="echoButton" destination="Pjp-8Q-l1g" id="suR-bX-aH0"/>
+                        <outlet property="fastButton" destination="rkx-oA-0iN" id="o26-K9-81l"/>
+                        <outlet property="highButton" destination="WAI-Wz-9hX" id="MiM-GB-pfZ"/>
+                        <outlet property="lowButton" destination="mOg-ot-XjK" id="C4i-bX-Yfn"/>
+                        <outlet property="reverbButton" destination="Vpu-Ep-wEb" id="ogM-FW-3Tl"/>
+                        <outlet property="slowButton" destination="VqP-lM-kPz" id="bB6-hg-fYE"/>
+                        <outlet property="stopButton" destination="rFS-kt-xH7" id="PLI-OZ-TX3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7JR-2w-ybs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,7 +257,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Echo" width="90" height="90"/>
+        <image name="Fast" width="90" height="90"/>
+        <image name="HighPitch" width="90" height="90"/>
+        <image name="LowPitch" width="90" height="90"/>
         <image name="RecordButton" width="155" height="155"/>
+        <image name="Reverb" width="90" height="90"/>
+        <image name="Slow" width="90" height="90"/>
         <image name="Stop" width="155" height="155"/>
     </resources>
 </document>
